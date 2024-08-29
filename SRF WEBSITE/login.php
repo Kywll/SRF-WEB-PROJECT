@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-        <h2>Welcome to Sacrificials!</h2>
+        <h2>Registration Form</h2>
         username:<br>
         <input type="text" name="username"><br>
         password:<br>
@@ -21,7 +21,10 @@
 
 
 <?php
+    session_start();
     include("database.php");
+
+    
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -40,16 +43,22 @@
             echo"Please enter a password";
         }
         elseif(isset($_POST['login'])){
+            #Make try and catches or failure conditions soon
             if ($user){
-                echo "Login Successful<br>";
-                header("Location:index.php");;
-                /*
-                if(passowrd_verify($password, $user["password"])){
+                if(password_verify($password, $user["password"])){
+                    $_SESSION["username"] = $username;
+                    $_SESSION["password"] = $password;
+
+                    echo "Login Successful<br>";
+                    header("Location:index.php");
+                    die();
                 }
-                */
+                else{
+                    echo "Password incorrect<br>";
+                }
             }
             else{
-                echo "Login Failed<br>";
+                echo "User not found<br>";
             }
         }
         else{
