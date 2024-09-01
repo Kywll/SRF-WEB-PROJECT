@@ -34,8 +34,7 @@
         $sql = "SELECT * FROM users WHERE user = '$username'";
         $result = mysqli_query($conn, $sql);
         $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-
+        
         if(empty($username)){
             echo"Please enter a username";
         }
@@ -43,7 +42,6 @@
             echo"Please enter a password";
         }
         elseif(isset($_POST['login'])){
-            #Make try and catches or failure conditions soon
             if ($user){
                 if(password_verify($password, $user["password"])){
                     $_SESSION["username"] = $username;
