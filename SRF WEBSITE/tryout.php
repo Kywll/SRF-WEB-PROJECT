@@ -30,8 +30,6 @@
 </html>
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +44,7 @@
             font-family: monospace;
             font-size: 25px;
             text-align: left;
+            background-color: lightcyan;
         }
         th {
             background-color: #d96459;
@@ -83,6 +82,23 @@
         ?>
         
     </table>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php">
+        <button>GO TO MAIN PAGE<br></button>
+    </form>
+    <form action="login.php">
+        <button>LOGOUT<br></button>
+    </form>
 </body>
 </html>
 
