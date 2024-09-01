@@ -15,6 +15,9 @@
     <form action="tryout.php">
         <button>Join Us<br></button>
     </form>
+    <form action="login.php">
+        <button>LOGOUT<br></button>
+    </form>
 </body>
 </html>
     
