@@ -87,7 +87,7 @@
     $second_role = $_GET["second_role"];
     $rating = $_GET["rating"];
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if($_SERVER["REQUEST_METHOD"] == "GET"){
         if(empty($ign)){
             echo"Please enter your IGN";
         }
