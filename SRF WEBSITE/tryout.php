@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="tryout.php" method="post">
+    <form action="tryout.php" method="get">
         <h2>Welcome to Sacrificials!</h2>
         <label>IGN:</label>
         <input type="text" name="ign"><br>
@@ -22,24 +22,29 @@
         <input type="submit" value="sumbit">
         <br>
     </form>
+    
 
+    
 </body>
 </html>
+
+
 
 
 <?php
     include("database.php");
     session_start();
+    error_reporting(E_ERROR | E_PARSE);
 
     $userist = $_SESSION["username"];
-    echo $_SESSION["username"] . "<br>";
-    echo $userist;
 
     #Problems Here Probably
     $sql = "SELECT id FROM users WHERE user = '$userist'";
 
     $result = mysqli_query($conn, $sql);
     $userid = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    
+    $main_id = $userid['id'];
 
     /* 
     $username = "jci";
@@ -77,39 +82,33 @@
 
     
 
-    $ign = $_POST["ign"];
-    $main_role = $_POST["main_role"];
-    $second_role = $_POST["second_role"];
-    $rating = $_POST["rating"];
+    $ign = $_GET["ign"];
+    $main_role = $_GET["main_role"];
+    $second_role = $_GET["second_role"];
+    $rating = $_GET["rating"];
 
-    $sql = "INSERT INTO resume (ign, owner_id, main_role, second_role, rating)
-            VALUES ('$ign', '$userid', '$main_role', '$second_role', '$rating')";
-    
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        if(empty($ign)){
+            echo"Please enter your IGN";
+        }
+        elseif(empty($main_role)){
+            echo"Please enter your main role";
+        }
+        elseif(empty($second_role)){
+            echo"Please enter your second role";
+        }
+        elseif(empty($rating)){
+            echo"Please enter your rating";
+        }
+        else{
+            $sql = "INSERT INTO resume (ign, owner_id, main_role, second_role, rating)
+            VALUES ('$ign', '$main_id', '$main_role', '$second_role', '$rating')";
+        }
+    }
     mysqli_query($conn, $sql);
     
     mysqli_close($conn);
 
-    
-
-    /* 
-    $name = "Hyztt";
-    $email = "fake@gmail.com";
-
-    $age = 19;
-    $inventory = 4.99;
-
-    echo"MGA <br>";
-    echo"ETITS <br>";
-   
-    echo"Hello {$name}<br>";
-    echo"Your email is {$email}<br>";
-    echo"You are {$age} years old<br>";
-    echo"Your inventory is worth \${$inventory} dollars<br>";
-    
-    //No comment
-    /*  Still
-        No
-        Comment*/
 ?>
 
 
