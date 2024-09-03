@@ -11,6 +11,9 @@
         <label>IGN:</label>
         <input type="text" name="ign"><br>
 
+        <label>STEAM ID:</label>
+        <input type="text" name="steam_id"><br>
+
         <label>Main Role:</label>
         <input type="text" name="main_role"><br>
 
@@ -110,7 +113,7 @@
     $userist = $_SESSION["username"];
 
     #Problems Here Probably
-    $sql = "SELECT id FROM users WHERE user = '$userist'";
+    $sql = "SELECT id FROM users WHERE user = '$userist' OR email ='$userist'";
 
     $result = mysqli_query($conn, $sql);
     $userid = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -122,6 +125,7 @@
     $id_owned = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
     $ign = $_GET["ign"];
+    $steam_id = $_GET["steam_id"];
     $main_role = $_GET["main_role"];
     $second_role = $_GET["second_role"];
     $rating = $_GET["rating"];
@@ -136,6 +140,9 @@
         elseif(empty($ign)){
             echo"Please enter your IGN";
         }
+        elseif(empty($steam_id)){
+            echo"Please enter your IGN";
+        }
         elseif(empty($main_role)){
             echo"Please enter your main role";
         }
@@ -146,12 +153,13 @@
             echo"Please enter your rating";
         }
         else{
-            $sql = "INSERT INTO resume (ign, owner_id, main_role, second_role, rating)
-            VALUES ('$ign', '$main_id', '$main_role', '$second_role', '$rating')";
+            $sql = "INSERT INTO resume (ign, owner_id, steam_id, main_role, second_role, rating)
+            VALUES ('$ign', '$main_id', '$steam_id', '$main_role', '$second_role', '$rating')";
 
             header('tryout.php');
         }
     }
+
     mysqli_query($conn, $sql);
     
     mysqli_close($conn);
