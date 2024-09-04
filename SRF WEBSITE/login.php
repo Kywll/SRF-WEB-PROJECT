@@ -1,40 +1,41 @@
+<?php
+    $title = 'Login';
+    $page = 'members';
+    include_once('navbar.php')
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post" id="log_side">
         <h2>Login</h2>
         username/email:<br>
-        <input type="text" name="username"><br>
+        <input type="text" name="username" id="user_info"><br>
         password:<br>
-        <input type="password" name="password"><br>
-        <input type="submit" name="login" value="login">
+        <input type="password" name="password" id="user_info"><br>
+        <input type="submit" name="login" value="SIGN IN" id="signing">
         <br>
     </form>
 
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post" id="reg_side">
         <h2>Register</h2>
         username:<br>
-        <input type="text" name="username"><br>
+        <input type="text" name="username" id="user_info"><br>
         email:<br>
-        <input type="text" name="email"><br>
+        <input type="text" name="email" id="user_info"><br>
         password:<br>
-        <input type="password" name="password"><br>
+        <input type="password" name="password" id="user_info"><br>
         confirm password:<br>
-        <input type="password" name="confirm_password"><br>
-        <input type="submit" name="register" value="register">
+        <input type="password" name="confirm_password" id="user_info"><br>
+        <input type="submit" name="register" value="SIGN UP" id="signing">
         <br>
     </form>
-
-    <form action="index.php">
-        <br>
-        <button>HOME<br></button>
-    </form>
-    
 
 </body>
 </html>
