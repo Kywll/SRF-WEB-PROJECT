@@ -1,3 +1,9 @@
+<?php
+    $title = 'Join Us';
+    $page = 'tryout';
+    include_once('navbar.php')
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -85,23 +91,6 @@
         ?>
         
     </table>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="index.php">
-        <button>GO TO MAIN PAGE<br></button>
-    </form>
-    <form action="login.php">
-        <button>LOGOUT<br></button>
-    </form>
 </body>
 </html>
 
