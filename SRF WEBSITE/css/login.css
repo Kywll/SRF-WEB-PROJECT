@@ -1,0 +1,30 @@
+#signing{
+    background-color: black;
+    color: aliceblue;
+    height: 4em;
+    width: 8em;
+    border: none;
+    margin-top: 10px;
+    font-family: 'Druk', sans-serif;
+}
+
+#user_info{
+    height: 40px;
+    width: 395px;
+}
+
+
+#log_side{
+    margin-left: 50px;
+    margin-left: 3%;
+}
+
+
+#reg_side{
+    margin-top: -260px;
+    margin-left: 55%;
+    
+    
+}
+
+
