@@ -1,0 +1,82 @@
+fieldset{
+    margin-top: 10px;
+}
+
+#signing{
+    background-color: black;
+    color: aliceblue;
+    height: 4em;
+    width: 8em;
+    border: none;
+    margin-top: 10px;
+    font-family: 'Druk', sans-serif;
+}
+
+#title{
+    position: absolute;
+    top: 175px;
+    left: 255px;
+    color: aliceblue;
+    max-width: 555px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 80px;
+}
+
+#user_info{
+    height: 40px;
+    width: 395px;
+
+}
+
+#list-split{
+    object-fit:cover;
+    float: left;
+    margin-right: 75px;
+    
+}
+
+#members-page{
+    width:102.5%;
+    height:275px;
+    object-fit:cover;
+    object-position:50% 56%;
+    margin-left: -17px
+}
+
+#sign-form{
+    margin-left: 50px;
+    margin-left: 4%;
+
+}
+
+#signing:hover{
+    background-color: rgba(114, 114, 114, 0.315);
+}
+
+@media (min-width: 1531px) {
+    #list-split{
+        object-fit:cover;
+        float: left;
+        margin-right: 75px;
+        margin-left: 24%;
+    }
+
+    #welcome{
+        margin-left: 24%;
+    }
+
+    #members-page{
+        width:101.37%;
+        height:275px;
+        object-fit:cover;
+        object-position:50% 56%;
+        margin-left: -17px
+    }
+
+    #title{
+        left: 750px;
+    }
+
+    
+}

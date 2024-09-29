@@ -1,0 +1,177 @@
+#bots-pic{
+    width:101.7%;
+    height:275px;
+    object-fit:cover;
+    object-position:50% 63%;
+    margin-left: -9px
+}
+
+#title{
+    position: absolute;
+    top: 125px;
+    left: 255px;
+    color: aliceblue;
+    max-width: 555px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 80px;
+}
+
+#all-members{
+    margin-left: 10px;
+    width: 1050px;
+}
+
+#members{
+    float: left;
+    width: 160px;
+    margin-left: 150px;
+}
+
+#card-left, #card-middle, #card-right{
+    background-color: lightcoral;
+    position: absolute;
+    width: 235px;
+    height: 325px;
+    z-index: -2000;
+    float: left;
+    margin-top: -320px;
+
+}
+
+#card-left{
+    margin-left: -100px;
+}
+
+#card-middle{
+    margin-left: -90px;
+}
+
+#card-right{
+    margin-left: -90px;
+}
+
+#thad p{
+    margin-left: -15px;
+}
+
+#content-left p{
+    margin-left: -30px;
+}
+
+#content-middle p{
+    margin-left: -15px;
+}
+
+#mark p{
+    margin-left: -33px;
+}
+
+#content-right p{
+    margin-left: -5px;
+}
+
+#content-left h2{
+    margin-left: -20px;
+}
+
+#content-middle h2{
+    margin-left: -10px;
+}
+
+#content-right h2{
+    margin-left: 0px;
+}
+
+#main-title{
+    margin-left: -75px;
+    
+}
+
+#bottom{
+    margin-top: 300px;
+    margin-left: 10px;
+}
+
+
+#profile-jci{
+    background-color:  rgb(0, 0, 0);
+    object-fit:cover;
+    border-radius: 25px;
+    width:200px;
+    height:200px;
+    margin-left: -83px;
+}
+
+#jci-text{
+    margin-left: -15px;
+}
+
+#solstice-text{
+    margin-left: -25px;
+}
+
+#profile-jasteen{
+    object-fit:cover;
+    border-radius: 25px;
+    width:200px;
+    height:200px;
+    margin-left: -72px;
+}
+
+#profile-hyztt{
+    object-fit:cover;
+    border-radius: 25px;
+    width:200px;
+    height:200px;
+    margin-left: -72px;
+}
+
+#profile-solstice{
+    object-fit:cover;
+    border-radius: 25px;
+    width:200px;
+    height:200px;
+    margin-left: -83px;
+}
+
+#jci-text{
+    margin-left: -25px;
+
+}
+
+#profile-mark{
+    object-fit:cover;
+    border-radius: 25px;
+    width:200px;
+    height:200px;
+    margin-left: -72px;
+}
+
+#profile-thad{
+    object-fit:cover;
+    border-radius: 25px;
+    width:200px;
+    height:200px;
+    margin-left: -72px;
+}
+
+
+@media (min-width: 1531px) {
+    #all-members, #bottom{
+        margin-left: 25%;
+    }
+    
+    #bots-pic{
+        width:100.95%;
+        height:275px;
+        object-fit:cover;
+        object-position:50% 63%;
+        margin-left: -9px
+    }
+
+    #title{
+        left: 750px;
+    }
+
+}
