@@ -1,7 +1,7 @@
 <?php
     $title = 'Join Us';
     $page = 'tryout';
-    include_once('navbar.php')
+    include_once('navs/navbar.php')
 ?>  
 
 <!DOCTYPE html>
@@ -10,91 +10,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
+    <img src="images/office.png" alt="" id="members-page">
+    <h1 id="title"><strong>TRYOUT</strong></h1>
+
     <form action="tryout.php" method="get">
-        <h2>Welcome to Sacrificials!</h2>
-        <label>IGN:</label>
-        <input type="text" name="ign"><br>
+        <div id="sign-form">
+            <h2 id="welcome">Welcome to Sacrificials!</h2>
+            <div id="list-split">
+            <input type="text" name="ign" id="user_info" placeholder="Enter ign" autocomplete="off" required><br>
+            <p></p>
+            
+            <input type="text" name="steam_id" id="user_info"  placeholder="Enter steam id" autocomplete="off" required><br>
+            <p></p>
 
-        <label>STEAM ID:</label>
-        <input type="text" name="steam_id"><br>
+            <input type="text" name="rating" id="user_info"  placeholder="Enter rating" autocomplete="off" required><br>
+            <p></p>
+            </div>
+        </div>
+            <div id="list-split2">
+            <input type="text" name="main_role" id="user_info"  placeholder="Enter main role" autocomplete="off" required><br>
+            <p></p>
+            
+            <input type="text" name="second_role" id="user_info"  placeholder="Enter second role" autocomplete="off" required><br>
+            
+            
 
-        <label>Main Role:</label>
-        <input type="text" name="main_role"><br>
-
-        <label>Second Role:</label>
-        <input type="text" name="second_role"><br>
-
-        <label>Rating:</label>
-        <input type="text" name="rating"><br>
-        <input type="submit" value="sumbit">
-        <input type="submit" name="delete" value="delete">
-        <br>
+            <input type="submit" value="SUBMIT" id="signing">
+            <input type="submit" name="delete" value="DELETE" id="signing">
+            <br><br>
+            
+        </div>
     </form>
     
-
     
-</body>
-</html>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style type="text/css">
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            color: #d96459;
-            font-family: monospace;
-            font-size: 25px;
-            text-align: left;
-            background-color: lightcyan;
-        }
-        th {
-            background-color: #d96459;
-            color: white;
-        }
-
-    </style>
-</head>
-<body>
-    <table>
-        <tr>
-            <th>IGN</th>
-            <th>Main Role</th>
-            <th>Second Role</th>
-            <th>Rating</th>
-        </tr>
-        
-        <?php
-        
-            $conn = mysqli_connect("localhost", "root", "", "sacrificialsdb");
-
-            $sql = "SELECT ign, main_role, second_role, rating FROM resume";
-            $result = $conn-> query($sql);
-        
-            if ($result-> num_rows > 0){
-                while($row = $result-> fetch_assoc()){
-                    echo "<tr><td>". $row["ign"] ."</td><td>". $row["main_role"] ."</td><td>". $row["second_role"] ."</td><td>". $row["rating"] ."</td><tr>";
-                }
-                echo "</table>";
-            }
-            else{
-                echo "0 result";
-            }
-            
-        ?>
-        
-    </table>
 </body>
 </html>
 
 <?php
+    
     include("database.php");
     session_start();
     error_reporting(E_ERROR | E_PARSE);
@@ -122,6 +79,9 @@
     if($_SERVER["REQUEST_METHOD"] == "GET"){
         if(isset($_GET['delete'])){
             $sql = "DELETE FROM resume WHERE owner_id = '$main_id'";
+        }
+        elseif(empty($main_id)){
+            echo"Login first to submit a tryout form";
         }
         elseif($id_owned){
             echo"You already submitted a form";
@@ -197,6 +157,65 @@
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: #d96459;
+            font-family: monospace;
+            font-size: 25px;
+            text-align: left;
+            background-color: lightcyan;
+        }
+        th {
+            background-color: #d96459;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<br><br><br>
+    <table>
+        <tr>
+            <th>IGN</th>
+            <th>Main Role</th>
+            <th>Second Role</th>
+            <th>Rating</th>
+        </tr>
+        
+        <?php
+        
+            $conn = mysqli_connect("localhost", "root", "", "sacrificialsdb");
+
+            $sql = "SELECT ign, main_role, second_role, rating FROM resume";
+            $result = $conn-> query($sql);
+        
+            if ($result-> num_rows > 0){
+                while($row = $result-> fetch_assoc()){
+                    echo "<tr><td>". $row["ign"] ."</td><td>". $row["main_role"] ."</td><td>". $row["second_role"] ."</td><td>". $row["rating"] ."</td><tr>";
+                }
+                echo "</table>";
+            }
+            else{
+                echo "0 result";
+            }
+            
+        ?>
+        
+    </table>
+    <br><br><br>
+</body>
+</html>
 
 
-
+<?php
+    include_once("navs/footer.php");
+?>
