@@ -8,9 +8,14 @@
     font-family: 'Druk', sans-serif;
 }
 
+#signing:hover{
+    background-color: rgba(114, 114, 114, 0.315);
+}
+
 #user_info{
     height: 40px;
     width: 395px;
+    
 }
 
 
@@ -21,10 +26,33 @@
 
 
 #reg_side{
-    margin-top: -260px;
+    margin-top: -240px;
     margin-left: 55%;
-    
     
 }
 
 
+fieldset{
+    margin-top: 10px;
+    
+}
+
+p{
+    
+}
+
+
+@media (min-width: 1531px) {
+    #log_side{
+    margin-left: 27%;
+    
+    }
+
+
+    #reg_side{
+        margin-top: -240px;
+        margin-left: 55%;
+        
+    }
+
+}
