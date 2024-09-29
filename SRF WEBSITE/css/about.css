@@ -1,0 +1,114 @@
+#about-csgo{
+    width:102%;
+    height:275px;
+    object-fit:cover;
+    object-position:50% 25%;
+    margin-left: -9px
+
+
+}
+
+#title{
+    position: absolute;
+    top: 105px;
+    left: -35px;
+    color: aliceblue;
+    max-width: 555px;
+    margin-left: 50px;
+    margin-top: 10px;
+    font-size: 80px;
+}
+
+#srflogo{
+    border-radius: 25px;
+    width:420px;
+    height:275px;
+    object-fit:cover;
+    object-position:50% 50%;
+    margin-top: 10px;
+    margin-left: -1px
+    
+}
+
+#srflogo2{
+    z-index: -2000;
+    position: absolute;
+    border-radius: 25px;
+    width:420px;
+    height:275px;
+    object-fit:cover;
+    object-position:50% 50%;
+    margin-top: 10px;
+    margin-left: 575px
+
+    
+    
+}
+
+#infosection{
+    position: absolute;
+    top: -140px;
+    left: 16px;
+    color: black;
+    margin-left: 455px;
+    margin-top: 490px;
+    max-width: 500px;
+}
+
+
+#infosection2{
+    position: absolute;
+    top: 140px;
+    left: 16px;
+    color: black;
+    margin-right: 455px;
+    margin-left: 20px;
+    margin-top: 565px;
+    max-width: 500px;
+    object-fit:cover;
+}
+
+#final h2{
+    margin-top: -250px;
+    margin-left: 450px;
+    margin-right: auto;
+    color: rgb(0, 0, 0);
+}
+
+#final p{
+    max-width: 745px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(0, 0, 0);
+}
+
+@media (min-width: 1531px) {
+    #everything, #infosection2{
+        margin-left: 25%;
+    }
+
+    #infosection{
+    margin-left: 55%;
+    }
+
+    #final h2{
+        margin-top: -250px;
+        margin-left: 950px;
+        margin-right: auto;
+        color: rgb(0, 0, 0);
+    }
+    
+    #about-csgo{
+    width:101%;
+    height:275px;
+    object-fit:cover;
+    object-position:50% 25%;
+    margin-left: -9px
+    }
+
+    #title{
+        left: 75px;
+    }
+
+
+}
