@@ -1,7 +1,7 @@
 <?php
     $title = 'Login';
     $page = 'members';
-    include_once('navbar.php')
+    include_once('navs/navbar.php')
 ?>  
 
 <!DOCTYPE html>
@@ -13,30 +13,35 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
+    
+    
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post" id="log_side">
-        <h2>Login</h2>
-        username/email:<br>
-        <input type="text" name="username" id="user_info"><br>
-        password:<br>
-        <input type="password" name="password" id="user_info"><br>
+        <h2>SIGN IN</h2>
+        
+        <input type="text" name="username" id="user_info" placeholder="Enter email address or username" autocomplete="on" required><br>
+        <p></p>
+        <input type="password" name="password" id="user_info" placeholder="Enter password" autocomplete="on" required><br>
         <input type="submit" name="login" value="SIGN IN" id="signing">
         <br>
     </form>
+    
+
 
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post" id="reg_side">
-        <h2>Register</h2>
-        username:<br>
-        <input type="text" name="username" id="user_info"><br>
-        email:<br>
-        <input type="text" name="email" id="user_info"><br>
-        password:<br>
-        <input type="password" name="password" id="user_info"><br>
-        confirm password:<br>
-        <input type="password" name="confirm_password" id="user_info"><br>
+        <h2>SIGN UP</h2>
+        <input type="text" name="username" id="user_info" placeholder="Enter username" autocomplete="off" required><br>
+        <p></p>
+        <input type="text" name="email" id="user_info" placeholder="Enter email address" autocomplete="off" required><br>
+        <p></p>
+        <input type="password" name="password" id="user_info" placeholder="Create password" autocomplete="off" required><br>
+        <p></p>
+        <input type="password" name="confirm_password" id="user_info" placeholder="Re-enter password" autocomplete="off" required><br>
         <input type="submit" name="register" value="SIGN UP" id="signing">
         <br>
     </form>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
+    
 </body>
 </html>
 
@@ -116,4 +121,8 @@
 
     mysqli_close($conn);
 
+?>
+
+<?php
+    include_once('navs/footer.php');
 ?>
